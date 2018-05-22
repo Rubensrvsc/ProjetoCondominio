@@ -4,9 +4,18 @@ from django.forms import ModelForm
 # Create your models here.
 
 
+class Proprietario(models.Model):
+	nome=models.CharField(max_length=50)
+	telefone=models.CharField(max_length=30)
+	pass
+
+	def __str__(self):
+		return self.nome
+
 class Apartamento(models.Model):
-	numero=models.IntegerField()
-	qtdQuartos=models.IntegerField()
+	numero=models.IntegerField(null=False)
+	qtdQuartos=models.IntegerField(null=False)
+	propri=models.ForeignKey(Proprietario,on_delete=models.CASCADE)
 	#isVazio=models.BooleanField()
 
 	'''def __init__(self,num,qtd):
@@ -14,14 +23,9 @@ class Apartamento(models.Model):
 		self.qtdQuartos=qtd
 	pass'''
 
-'''class Proprietario(models.Model):
-	nome=models.TextField()
-	string=models.TextField()
-	pass
-
-class Condominio(models.Model):
+'''class Condominio(models.Model):
 	mesAno=models.TextField()
-	#dataPagamento=DateField(null=True)
+	#dataPagamento=DateField(null=False)
 	valorPago=models.IntegerField()
 	valorPagar=models.IntegerField()
 	pass
@@ -34,9 +38,7 @@ class ItemCondominio(models.Model):
 class Despesa(models.Model):
 	mesAno=models.TextField()
 	valor=models.IntegerField()
-	pass
-
-class TipoDespesa(models.Model):
 	nome=models.TextField()
 	valorRateado=models.BooleanField()
-	pass'''
+	pass
+'''

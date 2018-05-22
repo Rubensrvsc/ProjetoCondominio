@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 from .forms import ApartamentoForm
+from django.core.urlresolvers import reverse
 # Create your views here.
 
 def index(request):
