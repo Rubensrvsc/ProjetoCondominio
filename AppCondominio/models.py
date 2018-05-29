@@ -5,8 +5,8 @@ from django.forms import ModelForm
 
 
 class Proprietario(models.Model):
-	nome=models.CharField(max_length=50)
-	telefone=models.CharField(max_length=30)
+	nome=models.CharField(max_length=50,default="")
+	telefone=models.CharField(max_length=30,default="")
 	pass
 
 	def __str__(self):
@@ -15,30 +15,38 @@ class Proprietario(models.Model):
 class Apartamento(models.Model):
 	numero=models.IntegerField(null=False)
 	qtdQuartos=models.IntegerField(null=False)
-	propri=models.ForeignKey(Proprietario,on_delete=models.CASCADE)
-	#isVazio=models.BooleanField()
+	proprietario=models.ForeignKey(Proprietario,on_delete=models.CASCADE,default=False)
+	#isVazio=models.BooleanField(default=False)
 
 	'''def __init__(self,num,qtd):
 		self.numero=num
 		self.qtdQuartos=qtd
 	pass'''
 
-'''class Condominio(models.Model):
-	mesAno=models.TextField()
-	#dataPagamento=DateField(null=False)
-	valorPago=models.IntegerField()
-	valorPagar=models.IntegerField()
+class TipoDespesa(models.Model):
+	nome=models.CharField(max_length=30,default="")
+	valorRateado=models.BooleanField(default=False)
+	
+	def __str__(self):
+		return self.nome
+
+class Despesa(models.Model):
+	mesAno=models.TextField(max_length=30,default="")
+	valor=models.IntegerField(null=False)
+	tipoDespesa=models.ForeignKey(TipoDespesa,on_delete=models.CASCADE,default=False)
 	pass
 
 class ItemCondominio(models.Model):
-	referencia=models.TextField()
-	valor=models.IntegerField()
+	referencia=models.TextField(max_length=30,default="")
+	valor=models.IntegerField(null=False)
+	despesa=models.ForeignKey(Despesa,on_delete=models.CASCADE,default=False)
 	pass
 
-class Despesa(models.Model):
-	mesAno=models.TextField()
-	valor=models.IntegerField()
-	nome=models.TextField()
-	valorRateado=models.BooleanField()
+class Condominio(models.Model):
+	mesAno=models.TextField(max_length=30,default="")
+	dataPagamento=models.DateField(null=False)
+	valorPago=models.IntegerField(null=False)
+	valorPagar=models.IntegerField(null=False)
+	apartamento=models.ForeignKey(Apartamento,on_delete=models.CASCADE,default=False)
+	itens=models.ManyToManyField(ItemCondominio,default=False)
 	pass
-'''
