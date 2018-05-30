@@ -6,10 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Cadastro</h1>
+<h1>Lançar condominio do mês</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        {{ formCondominio.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
+
+        <button type="submit" class="save btn btn-default">Cadastrar item do condominio</button>
+
     </body>
   </html>

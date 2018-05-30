@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<nav  class="p-3 mb-2 bg-warning text-dark">
+  		<h3>AppCondominio</h3>
+	</nav>
+
+	<div class="container">
+		<div class="card-deck mb-3 text-center">
+
+    		<div class="card" style="width: 18rem;">
+    			<div class="card-header"><h5>Cadastro de apartamento</h5></div>
+  					<div class="card-body">
+    					<p class="card-text">Aqui você cadastra os apartamentos</p>
+    					<a href="{% url 'apartForm' %}" class="btn btn-primary">Cadastro</a>
+  					</div>
+			</div>
+
+			<div class="card" style="width: 18rem;">
+				<div class="card-header"><h5>Cadastro o proprietario</h5></div>
+  					<div class="card-body">
+    					<p class="card-text">Aqui é o cadastro do proprietario</p>
+    					<a href="{% url 'proprietarioFormulario' %}" class="btn btn-primary">Cadastre</a>
+  					</div>
+  			</div>
+
+  			<div class="card" style="width: 18rem;">
+  				<div class="card-header"><h5>Cadastro o condominio</h5></div>
+  					<div class="card-body">
+    					<p class="card-text">Gerenciamento do condominio do mes</p>
+    					<a href="#" class="btn btn-primary">Go somewhere</a>
+  					</div>
+  			</div>
+
+		</div>
+	</div>
+</body>
+</html>
