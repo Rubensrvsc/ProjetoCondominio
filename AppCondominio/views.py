@@ -17,6 +17,7 @@ def apartForm(request):
 	if request.method=='POST':
 		if form.is_valid():
 			form.save()
+			return redirect('inicio')
 		else:
 			form=apartamentoForm()
 	return render(request, 'formulario_teste.html',{'form':form})
@@ -31,7 +32,7 @@ def proprietarioFormulario(request):
 	return render(request,'formulario_proprietario.html',{'formProprietario':formProprietario})
 
 def condominioFormulario(request):
-	formCondominio=condominioForm(request.POST or None)
+	formCondominio=condominioForm(request.POST)
 	if request=='POST':
 		if formCondominio.is_valid():
 			formCondominio.save()

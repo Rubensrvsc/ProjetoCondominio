@@ -1,6 +1,7 @@
 from django.db import models
 from django.forms import ModelForm
-
+# -*- encoding: iso-8859-1 -*-
+# -*- encoding: utf-8 -*-
 # Create your models here.
 
 
@@ -44,7 +45,7 @@ class ItemCondominio(models.Model):
 
 class Condominio(models.Model):
 	mesAno=models.TextField(max_length=30,default="")
-	dataPagamento=models.DateField(null=False)
+	dataPagamento=models.DateField(auto_now=False)
 	valorPago=models.IntegerField(null=False)
 	valorPagar=models.IntegerField(null=False)
 	apartamento=models.ForeignKey(Apartamento,on_delete=models.CASCADE,default=False)

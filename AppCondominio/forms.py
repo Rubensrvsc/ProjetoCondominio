@@ -1,4 +1,4 @@
-from .models import Apartamento,Proprietario,Condominio
+from .models import Apartamento,Proprietario,Condominio,ItemCondominio,Despesa,TipoDespesa
 from django import forms
 
 
@@ -16,3 +16,19 @@ class condominioForm(forms.ModelForm):
 	class Meta:
 		model=Condominio
 		fields='__all__'
+
+class itemForm(forms.ModelForm):
+	class Meta:
+		model=ItemCondominio
+		fields='__all__'
+
+class despesaForm(forms.ModelForm):
+	class Meta:
+		model=Despesa
+		fields='__all__'
+
+class tipoDespesaForm(forms.ModelForm):
+	class Meta:
+		model=TipoDespesa
+		fields='__all__'
+			
