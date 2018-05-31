@@ -40,12 +40,12 @@ class Despesa(models.Model):
 class ItemCondominio(models.Model):
 	referencia=models.TextField(max_length=30,default="")
 	valor=models.IntegerField(null=False)
-	despesa=models.ForeignKey(Despesa,on_delete=models.CASCADE,default=False)
+	#despesa=models.ForeignKey(Despesa,on_delete=models.CASCADE,default=False)
 	pass
 
 class Condominio(models.Model):
 	mesAno=models.TextField(max_length=30,default="")
-	dataPagamento=models.DateField(auto_now=False)
+	dataPagamento=models.IntegerField(null=False)
 	valorPago=models.IntegerField(null=False)
 	valorPagar=models.IntegerField(null=False)
 	apartamento=models.ForeignKey(Apartamento,on_delete=models.CASCADE,default=False)

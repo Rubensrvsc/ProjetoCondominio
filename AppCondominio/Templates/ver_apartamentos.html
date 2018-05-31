@@ -7,11 +7,16 @@
 </head>
 <body>
 <nav  class="p-3 mb-2 bg-warning text-dark">
-    <h1>Cadastro</h1>
+    <h1>Apartamentos</h1>
 </nav>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ formProprietario.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+    {% if apartamento %}
+    <ul>
+        {% for apart in apartamento %}
+            <li>Numero: {{apart.numero}} / Proprietario: {{apart.proprietario}}</li>
+        {% endfor %}
+    </ul>   
+    {% else %}
+        <p>Nenhum perfil encontrado</p>
+    {% endif %}
     </body>
   </html>

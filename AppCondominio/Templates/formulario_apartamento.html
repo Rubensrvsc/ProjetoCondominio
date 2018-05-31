@@ -6,10 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Cadastro</h1>
+<nav  class="p-3 mb-2 bg-warning text-dark">
+    <h1>Cadastro</h1>
+<nav>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-default">Salvar</button>
     </form>
     </body>
   </html>

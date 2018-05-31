@@ -17,7 +17,8 @@
     			<div class="card-header"><h5>Cadastro de apartamento</h5></div>
   					<div class="card-body">
     					<p class="card-text">Aqui você cadastra os apartamentos</p>
-    					<a href="{% url 'apartForm' %}" class="btn btn-primary">Cadastro</a>
+    					<a href="{% url 'apartamentos' %}" class="btn btn-primary">Ver Apartamentos</a>
+              <a href="{% url 'apartForm' %}" class="btn btn-primary">Cadastro</a>
   					</div>
 			</div>
 
@@ -42,7 +43,7 @@
   				<div class="card-header"><h5>Cadastre o Item</h5></div>
   					<div class="card-body">
     					<p class="card-text">Cadastro dos Itens do Condominio</p>
-    					<a href="#" class="btn btn-primary">Cadastre</a>
+    					<a href="{% url 'itens' %}" class="btn btn-primary">Cadastre</a>
   					</div>
   			</div>
 		</div>
