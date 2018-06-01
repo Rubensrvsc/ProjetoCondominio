@@ -6,12 +6,6 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 # Create your views here.
 
-def index(request):
-    return render(request,'teste_javascript.html')
-
-def boot(request):
-	return render(request,'teste_bootstrap.html')
-
 def apartForm(request):
 	form=apartamentoForm(request.POST or None)
 	if request.method=='POST':
