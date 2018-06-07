@@ -3,7 +3,7 @@ from django.forms import ModelForm
 # -*- encoding: iso-8859-1 -*-
 # -*- encoding: utf-8 -*-
 # Create your models here.
-
+#Adicionar as funcionalidas das classes de modelo
 
 class Proprietario(models.Model):
 	nome=models.CharField(max_length=50,default="")
@@ -17,8 +17,7 @@ class Apartamento(models.Model):
 	numero=models.IntegerField(null=False)
 	qtdQuartos=models.IntegerField(null=False)
 	proprietario=models.ForeignKey(Proprietario,on_delete=models.CASCADE,default=False)
-	#isVazio=models.BooleanField(default=False)
-
+	
 	'''def __init__(self,num,qtd):
 		self.numero=num
 		self.qtdQuartos=qtd
@@ -40,7 +39,7 @@ class Despesa(models.Model):
 class ItemCondominio(models.Model):
 	referencia=models.TextField(max_length=30,default="")
 	valor=models.IntegerField(null=False)
-	#despesa=models.ForeignKey(Despesa,on_delete=models.CASCADE,default=False)
+	despesa=models.ForeignKey(Despesa,on_delete=models.CASCADE,default=False)
 	pass
 
 class Condominio(models.Model):
